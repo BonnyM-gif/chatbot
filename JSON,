@@ -1,0 +1,26 @@
+[
+  {
+    "keywords": ["hello","hi","hey","good morning","good afternoon"],
+    "answer": "Hi! I'm your school helper bot. Ask me about homework, schedule, office hours, or contact info."
+  },
+  {
+    "keywords": ["homework","assignment","due","deadline"],
+    "answer": "Homework: Check your class page for assignments. If you tell me the class, I can try to show typical tasks."
+  },
+  {
+    "keywords": ["schedule","timetable","classes","period"],
+    "answer": "Typical schedule: 8:30-9:20 Math, 9:30-10:20 English, 10:30-11:20 Science, 11:20-12:10 Lunch. Want today's schedule for a specific class or grade?"
+  },
+  {
+    "keywords": ["office hours","hours","availability","when"],
+    "answer": "Teachers' office hours vary. For example, Ms. Lopez (Math) is available Tue/Thu 3:00-4:00pm. Ask for a specific teacher if you want details."
+  },
+  {
+    "keywords": ["contact","email","phone","reach"],
+    "answer": "For administrative help contact admin@school.edu or call (555) 123-4567. For teacher contact, ask for a teacher name."
+  },
+  {
+    "keywords": ["thanks","thank you","thx"],
+    "answer": "You're welcome! Anything else I can help with?"
+  }
+]
