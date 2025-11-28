@@ -1,0 +1,41 @@
+(() => {
+  const socket = io();
+
+  const messagesEl = document.getElementById('messages');
+  const inputEl = document.getElementById('input');
+  const sendBtn = document.getElementById('send');
+
+  function appendMessage(text, cls) {
+    const el = document.createElement('div');
+    el.className = 'msg ' + cls;
+    el.textContent = text;
+    messagesEl.appendChild(el);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  socket.on('connect', () => {
+    // connected
+  });
+
+  socket.on('bot message', (payload) => {
+    appendMessage(payload.text, 'bot');
+  });
+
+  socket.on('user message', (payload) => {
+    // We also append user messages as they are echoed back by the server
+    appendMessage(payload.text, 'user');
+  });
+
+  sendBtn.addEventListener('click', send);
+  inputEl.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') send();
+  });
+
+  function send() {
+    const text = inputEl.value && inputEl.value.trim();
+    if (!text) return;
+    socket.emit('user message', { text });
+    inputEl.value = '';
+    inputEl.focus();
+  }
+})();
